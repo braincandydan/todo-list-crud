@@ -1,5 +1,5 @@
 // Import Flatpickr
-const flatpickr = require('flatpickr');
+import flatpickr from "flatpickr";
 
 // Initialize Flatpickr
 flatpickr("#dueDateTime", {
