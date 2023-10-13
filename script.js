@@ -1,64 +1,35 @@
+// Import Flatpickr
+import flatpickr from "flatpickr";
+
+// Initialize Flatpickr
+flatpickr("#dueDateTime", {
+  enableTime: true,
+  dateFormat: "Y-m-d H:i:S",
+});
 
 function addTask() {
-    const taskName = document.getElementById('newTask').value;
-    const dueDate = document.getElementById('dueDate').value;
-    const dueTime = document.getElementById('dueTime').value;
-  
-    if (taskName.trim() !== '') {
-      const taskList = document.getElementById('taskList');
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <span>${taskName}</span>
-        <span>Due: ${formatDueDate(dueDate, dueTime)}</span>
-        <button onclick="deleteTask(this)">Delete</button>
-      `;
-      taskList.appendChild(li);
-      document.getElementById('newTask').value = '';
-      document.getElementById('dueDate').value = '';
-      document.getElementById('dueTime').value = '';
-    }
-  }
-  
-  function deleteTask(button) {
-    button.parentElement.remove();
-  }
-  
-  function formatDueDate(dateString, timeString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
-    return new Date(`${dateString}T${timeString}`).toLocaleDateString('en-US', options);
-  }
-  
-  import flatpickr from "flatpickr";
+  const taskName = document.getElementById('newTask').value;
+  const dueDateTime = document.getElementById('dueDateTime').value;
 
-  flatpickr("#dueDateTime", {
-    enableTime: true,
-    dateFormat: "Y-m-d H:i:S",
-  });
-  
-  function addTask() {
-    const taskName = document.getElementById('newTask').value;
-    const dueDateTime = document.getElementById('dueDateTime').value;
-  
-    if (taskName.trim() !== '' && dueDateTime.trim() !== '') {
-      const taskList = document.getElementById('taskList');
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <span>${taskName}</span>
-        <span>Due: ${formatDueDate(dueDateTime)}</span>
-        <button onclick="deleteTask(this)">Delete</button>
-      `;
-      taskList.appendChild(li);
-      document.getElementById('newTask').value = '';
-      document.getElementById('dueDateTime').value = '';
-    }
+  if (taskName.trim() !== '' && dueDateTime.trim() !== '') {
+    const taskList = document.getElementById('taskList');
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span>${taskName}</span>
+      <span>Due: ${formatDueDate(dueDateTime)}</span>
+      <button onclick="deleteTask(this)">Delete</button>
+    `;
+    taskList.appendChild(li);
+    document.getElementById('newTask').value = '';
+    document.getElementById('dueDateTime').value = '';
   }
-  
-  function deleteTask(button) {
-    button.parentElement.remove();
-  }
-  
-  function formatDueDate(dateTimeString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
-    return new Date(dateTimeString).toLocaleDateString('en-US', options);
-  }
-  
+}
+
+function deleteTask(button) {
+  button.parentElement.remove();
+}
+
+function formatDueDate(dateTimeString) {
+  const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+  return new Date(dateTimeString).toLocaleDateString('en-US', options);
+}
