@@ -4,10 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo List</title>
-  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="node_modules/flatpickr/dist/flatpickr.min.css">
-  <script src="node_modules/flatpickr/dist/flatpickr.min.js"></script>
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
@@ -20,6 +18,7 @@
     <button onclick="addTask()">Add Task</button>
     <ul id="taskList"></ul>
   </div>
-  <script src="script.js"></script>
+  <script src="node_modules/flatpickr/dist/flatpickr.min.js"></script>
+  <script src="script.js" type="module"></script>
 </body>
 </html>
