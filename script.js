@@ -1,7 +1,5 @@
-// Import Flatpickr
 import flatpickr from "flatpickr";
 
-// Initialize Flatpickr
 flatpickr("#dueDateTime", {
   enableTime: true,
   dateFormat: "Y-m-d H:i:S",
