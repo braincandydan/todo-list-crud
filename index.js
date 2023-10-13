@@ -4,9 +4,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// Add this near the top of your index.js file
 app.use(express.static('public'));
-
 
 const PORT = process.env.PORT || 3000;
 

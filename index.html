@@ -11,14 +11,40 @@
 </head>
 <body>
   <div class="container">
-    <h1>Todo List</h1>
-    <input type="text" id="newTask" placeholder="Add a new task">
-    <div class="datetime">
-      <label for="dueDate">Due Date:</label>
-      <input type="text" id="dueDateTime">
-    </div>
-    <button onclick="addTask()">Add Task</button>
-    <ul id="taskList"></ul>
+    <div class="container">
+        <h1>Todo List</h1>
+        <input type="text" id="newTask" placeholder="Add a new task">
+        <div class="datetime">
+          <label for="dueDate">Due Date:</label>
+          <input type="text" id="dueDateTime">
+        </div>
+        <label for="priority">Priority:</label>
+        <select id="priority" name="priority">
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+        <label for="category">Category:</label>
+        <input type="text" id="category" placeholder="Add a category">
+        <label for="notes">Notes:</label>
+        <textarea id="notes" rows="4" cols="50" placeholder="Add notes..."></textarea>
+        <label for="completed">Completed:</label>
+        <input type="checkbox" id="completed" name="completed">
+        <label for="subtasks">Subtasks:</label>
+        <textarea id="subtasks" rows="4" cols="50" placeholder="Add subtasks..."></textarea>
+        <label for="labels">Labels/Colors:</label>
+        <input type="text" id="labels" placeholder="Add labels/colors">
+        <label for="attachments">Attachments:</label>
+        <input type="text" id="attachments" placeholder="Add attachments">
+        <label for="reminder">Reminder/Alert:</label>
+        <input type="text" id="reminder" placeholder="Add reminder/alert">
+        <label for="recurring">Recurring Tasks:</label>
+        <input type="text" id="recurring" placeholder="Add recurring tasks">
+        <label for="estimateTime">Estimate Time (in minutes):</label>
+        <input type="number" id="estimateTime" placeholder="Estimate time...">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+      </div>
   </div>
   <script src="script.js"></script>
 </body>
