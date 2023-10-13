@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo List</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="node_modules/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
   <div class="container">
@@ -12,8 +13,7 @@
     <input type="text" id="newTask" placeholder="Add a new task">
     <div class="datetime">
       <label for="dueDate">Due Date:</label>
-      <input type="date" id="dueDate">
-      <input type="time" id="dueTime">
+      <input type="text" id="dueDateTime">
     </div>
     <button onclick="addTask()">Add Task</button>
     <ul id="taskList"></ul>

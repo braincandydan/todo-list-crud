@@ -1,3 +1,4 @@
+
 function addTask() {
     const taskName = document.getElementById('newTask').value;
     const dueDate = document.getElementById('dueDate').value;
@@ -26,4 +27,10 @@ function addTask() {
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
     return new Date(`${dateString}T${timeString}`).toLocaleDateString('en-US', options);
   }
+  
+  import flatpickr from "flatpickr";
+  flatpickr("#dueDateTime", {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i:S",
+  });
   
