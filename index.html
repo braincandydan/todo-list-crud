@@ -10,7 +10,11 @@
   <div class="container">
     <h1>Todo List</h1>
     <input type="text" id="newTask" placeholder="Add a new task">
-    <input type="datetime-local" id="dueDate">
+    <div class="datetime">
+      <label for="dueDate">Due Date:</label>
+      <input type="date" id="dueDate">
+      <input type="time" id="dueTime">
+    </div>
     <button onclick="addTask()">Add Task</button>
     <ul id="taskList"></ul>
   </div>
